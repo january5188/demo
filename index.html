@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>love</title>
+<title>大鹅爱小李</title>
+<link rel="icon" href="favicon.ico" type ="image/x-icon">
+
 <style>
 body{
   overflow: hidden;
@@ -120,8 +122,20 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体"}
 <h1 id="h1"></h1>
 <canvas class="canvas1"></canvas>
 
-<script>
+<script type="text/javascript">
+  window.onload = function(){
+      setInterval("toggleSound()",100);
+  }
+  function toggleSound() {
+    var music = document.getElementById("vd");//获取ID  
+    if (music.paused) { //判读是否播放  
+        music.paused=false;
+        music.play(); //没有就播放 
+    }    
+  }
+</script>
 
+<script>
 var canvas = document.querySelector('.canvas1'),
  ctx = canvas.getContext("2d");
 
@@ -236,7 +250,7 @@ window.onload=function starttime(){
 </script>
 
 
-<audio autoplay="autoplay" loop="loop" preload="auto"  src="http://music.163.com/song/media/outer/url?id=1851244378.mp3"></audio>
+<audio id="vd" autoplay="autoplay" loop="loop" preload="auto"  src="http://music.163.com/song/media/outer/url?id=1851244378.mp3"></audio>
 
 <canvas class="canvas"></canvas>
 <div class="help"></div> 
